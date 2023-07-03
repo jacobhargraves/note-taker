@@ -3,7 +3,7 @@ const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 const { readFromFile, readAndAppend } = require('./helpers/fsUtils');
 
-const PORT = process.env.port || 5001;
+const PORT = process.env.PORT;
 
 const app = express();
 
@@ -50,6 +50,10 @@ app.post('/api/notes', (req, res) => {
       res.error('Error in adding note');
     }
   });
+
+//app.delete(`api/notes/${id}`, (req, res) => {
+
+//})
 
 app.listen(PORT, () =>
   console.log(`App listening at http://localhost:${PORT} 🚀`)
