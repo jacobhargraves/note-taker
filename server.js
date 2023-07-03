@@ -3,7 +3,7 @@ const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 const { readFromFile, readAndAppend } = require('./helpers/fsUtils');
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5001;
 
 const app = express();
 
